@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "pcre2.h": "c",
+        "string.h": "c"
+    }
+}
