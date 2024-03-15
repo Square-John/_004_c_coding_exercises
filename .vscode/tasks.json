@@ -65,7 +65,7 @@
                 "'${file}'",
                 "-o",
                 "'${fileDirname}\\build\\${fileBasenameNoExtension}.exe'",
-                "-lwsock32", //使用socket库时，需要加上这个参数
+                // "-lwsock32", //使用socket库时，需要加上这个参数
                 // "-lcurl", //使用curl库时，需要加上这个参数
                 //"-lregex", //使用正则表达式regex库时，需要加上这个参数
                 //"-lpcre2-16" //使用正则表达式pcre2库时，需要加上这个参数
