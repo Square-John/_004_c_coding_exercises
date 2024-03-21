@@ -17,17 +17,12 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "detail": "调试器生成的任务。"
         },
-
         {
             "label": "新建build文件夹",
             "detail": "用于新建存放编译后二进制程序的build文件夹",
-            // 快捷键："ctrl+alt+n space",
             "type": "shell",
             "icon": {
                 "color": "terminal.ansiRed",
@@ -42,20 +37,17 @@
                 "focus": false,
                 "panel": "shared",
                 "showReuseMessage": true,
-                "clear": true,
+                "clear": true
             }
         },
         {
             "label": "C/C++程序编译",
             "detail": "编译C语言程序源代码",
-            //快捷键：ctrl+alt+b space
             "type": "shell",
             "icon": {
                 "color": "terminal.ansiRed",
                 "id": "archive"
             },
-            // 加入-g后端口方能回显执行的命令信息，否则没有回显
-            // "command": "g++ -Wall -std=c++17 -g -fexec-charset=GB2312 '${file}' -o '${fileDirname}\\build\\${fileBasenameNoExtension}.exe'",
             "command": "gcc",
             "args": [
                 "-Wall",
@@ -64,11 +56,7 @@
                 "-fexec-charset=GB2312",
                 "'${file}'",
                 "-o",
-                "'${fileDirname}\\build\\${fileBasenameNoExtension}.exe'",
-                // "-lwsock32", //使用socket库时，需要加上这个参数
-                // "-lcurl", //使用curl库时，需要加上这个参数
-                //"-lregex", //使用正则表达式regex库时，需要加上这个参数
-                //"-lpcre2-16" //使用正则表达式pcre2库时，需要加上这个参数
+                "'${fileDirname}\\build\\${fileBasenameNoExtension}.exe'"
             ],
             "group": "build",
             "problemMatcher": "$gcc",
@@ -80,7 +68,7 @@
                 "panel": "shared",
                 "showReuseMessage": true,
                 "clear": false,
-                "revealProblems": "onProblem",
+                "revealProblems": "onProblem"
             },
             "dependsOn": [
                 "新建build文件夹"
@@ -89,7 +77,6 @@
         {
             "label": "C/C++程序运行",
             "detail": "运行当前C代码编译后的程序",
-            //快捷键：ctrl+alt+l space
             "type": "shell",
             "promptOnClose": true,
             "icon": {
@@ -101,7 +88,7 @@
                 "kind": "build"
             },
             "runOptions": {
-                "instanceLimit": 10,
+                "instanceLimit": 10
             },
             "presentation": {
                 "echo": true,
@@ -117,7 +104,6 @@
         {
             "label": "C/C++程序编译并运行",
             "detail": "进行C程序编译，并在完成后自动运行",
-            //快捷键：ctrl+alt+l space
             "type": "shell",
             "promptOnClose": true,
             "icon": {
@@ -132,7 +118,7 @@
                 "C/C++程序编译"
             ],
             "runOptions": {
-                "instanceLimit": 10,
+                "instanceLimit": 10
             },
             "presentation": {
                 "echo": true,
@@ -144,13 +130,30 @@
                 "clear": false,
                 "revealProblems": "onProblem"
             }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe 生成活动文件",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
         }
-
-
-
-
-
-
     ],
     "version": "2.0.0"
 }

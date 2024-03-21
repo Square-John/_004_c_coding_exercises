@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define HEX 10 // 十进制
+#define DEC 10 // 十进制
 
 int main(int argc, char const *argv[])
 {
